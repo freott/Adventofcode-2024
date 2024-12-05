@@ -48,7 +48,7 @@ def calcInstruction(instruction: tuple[str, str]):
         raise ValueError(f"Unsupported operation: {operator}")
 
 
-def part2(data):
+def part2(data) -> int:
     instructions = getInstructions(data)
     results = list(map(calcInstruction, instructions))
     total = 0

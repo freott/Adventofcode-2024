@@ -48,19 +48,17 @@ def part1(data: str) -> int:
     return result
 
 
-def part2(data):
+def part2(data) -> int:
     cord_map = get_cord_map(data)
     chars = ['M','A','S']
     result = 0
     for cord in cord_map:
-        if cord_map[cord] is not 'A': continue
+        if cord_map[cord] != 'A': continue
         if ((
-                iterate(get_cord(cord, 'NW'), chars[:], 'SE', cord_map)
-                or iterate(get_cord(cord, 'SE'), chars[:], 'NW', cord_map)
-            ) and (
-                iterate(get_cord(cord, 'NE'), chars[:], 'SW', cord_map)
-                or iterate(get_cord(cord, 'SW'), chars[:], 'NE', cord_map)
-            )
-        ): 
-            result += 1
+            iterate(get_cord(cord, 'NW'), chars[:], 'SE', cord_map)
+            or iterate(get_cord(cord, 'SE'), chars[:], 'NW', cord_map)
+        ) and (
+            iterate(get_cord(cord, 'NE'), chars[:], 'SW', cord_map)
+            or iterate(get_cord(cord, 'SW'), chars[:], 'NE', cord_map)
+        )): result += 1
     return result

@@ -21,7 +21,7 @@ def part1(data: str) -> int:
     return results
 
 
-def part2(data):
+def part2(data) -> int:
     rows = data.split('\n')
     leftList = []
     rightList = []
