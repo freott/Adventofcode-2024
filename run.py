@@ -49,12 +49,15 @@ if __name__ == "__main__":
     test = False
     part = None
 
-    if len(sys.argv) >= 3:
-        if sys.argv[2].lower() == "test":
+    arg2 = sys.argv[2] if len(sys.argv) > 2 else None
+    arg3 = sys.argv[3] if len(sys.argv) > 3 else None
+    
+    for i in [2, 3]:
+        arg = sys.argv[i] if len(sys.argv) > i else None
+        if (arg == None): continue
+        if (arg.lower() == "test"):
             test = True
-            if len(sys.argv) == 4:
-                part = int(sys.argv[3])
-        else:
-            part = int(sys.argv[2])
+        elif (arg.isdigit()):
+            part = int(arg)
 
     run_solution(day, test, part)
