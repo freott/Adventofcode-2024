@@ -1,3 +1,9 @@
 venv/
 __pycache__/
 *.pyc
+
+input.txt
+test_input.txt
+
+!days/template_day/input.txt
+!days/template_day/test_input.txt
