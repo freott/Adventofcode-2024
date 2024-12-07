@@ -1,4 +1,6 @@
-from typing import List, NamedTuple
+from concurrent.futures import ThreadPoolExecutor
+from multiprocessing import Pool
+from typing import List, NamedTuple, Tuple
 
 class Equation(NamedTuple):
     result: int
@@ -30,14 +32,20 @@ def validate(curr_val: int, expected_val: int, numbers: List[int]):
         )
     )
     
+def process_equation(args: Tuple[int, Equation]):
+    running_part_input, eq = args
+    global running_part
+    running_part = running_part_input
+    return eq.result if validate(eq.numbers.pop(0), eq.result, eq.numbers) else 0
+
 def run(data: str):
     equations = read(data)
-    total_result = sum(
-        [eq.result for eq in equations if validate(
-            eq.numbers.pop(0), 
-            eq.result, 
-            eq.numbers
-        )])
+
+    from multiprocessing import Pool
+    with Pool() as pool:
+        results = pool.map(process_equation, [(running_part, eq) for eq in equations])
+    
+    total_result = sum(results)
     return total_result
     
 def part1(data: str) -> int:
