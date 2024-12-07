@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run with Arguments",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py", // Path to your `run.py`
+            "args": [
+                "7",
+                "1",
+                "test"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Run with Dynamic Arguments",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "args": [
+                "${input:solution}",
+                "${input:part}",
+                "${input:test}"
+            ],
+            "console": "integratedTerminal"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "solution",
+            "type": "promptString",
+            "description": "Enter solution number (e.g., 7)"
+        },
+        {
+            "id": "part",
+            "type": "promptString",
+            "description": "Enter part (e.g., 1 or 2)",
+            "default": "1"
+        },
+        {
+            "id": "test",
+            "type": "promptString",
+            "description": "Enter 'test' to use test input or leave blank",
+            "default": ""
+        }
+    ]
+}
