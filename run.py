@@ -1,6 +1,7 @@
 import importlib
 import os
 import sys
+import time
 
 def get_input_file(day: str, test: bool = False) -> str:
     return (
@@ -34,10 +35,14 @@ def run_solution(day, test: bool = False, part: int = None):
         data = f.read().strip()
 
     print(f"Running Day {day}...")
-    if part is None or part == 1:
-        print("Part 1:", solution.part1(data))
-    if part is None or part == 2:
-        print("Part 2:", solution.part2(data))
+    def run(partNo: int):
+        start = time.time()
+        if partNo == 1: print("Part 1:", solution.part1(data))
+        elif partNo == 2: print("Part 2:", solution.part2(data))
+        elapsed = time.time() - start
+        print(f"Elapsed Time: {elapsed:.6f} seconds")
+        
+    [run(partNo) for partNo in [1,2] if part is None or part == partNo]
 
 
 if __name__ == "__main__":
