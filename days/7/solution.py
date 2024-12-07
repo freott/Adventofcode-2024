@@ -12,6 +12,7 @@ def read(data: str) -> List[Equation]:
     ]
     
 def validate(curr_val: int, expected_val: int, numbers: List[int]):
+    if curr_val > expected_val: return False
     if len(numbers) == 0:
         if curr_val == expected_val: return True
         return False
