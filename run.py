@@ -22,13 +22,16 @@ def run_solution(day, test: bool = False, part: int = None):
     if not os.path.exists(input_file):
         print(f"Input file {input_file} not found!")
         return
+    
+    # Dynamically add the day folder to sys.path
+    sys.path.insert(0, os.path.abspath(day_folder))
 
     # Dynamically import the solution module
     module_name = f"days.{day}.solution"
     try:
         solution = importlib.import_module(module_name)
-    except ImportError:
-        print(f"Could not import solution for Day {day}.")
+    except ImportError as e:
+        print(f"Could not import solution for Day {day}: {e}")
         return
 
     with open(input_file) as f:

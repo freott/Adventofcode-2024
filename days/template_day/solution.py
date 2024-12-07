@@ -1,9 +1,5 @@
-from typing import List
-
-
-def part1(data: str) -> int:
-    return 0
-
-
-def part2(data) -> int:
-    return 0
+import p1
+import p2
+        
+part1 = lambda data: p1.run(data)
+part2 = lambda data: p2.run(data)
