@@ -2,6 +2,10 @@ import importlib
 import os
 import sys
 import time
+from colorama import Fore, Style
+
+BRIGHT_GREEN = "\033[32m"
+RESET = "\033[0m"
 
 def get_input_file(day: str, test: bool = False) -> str:
     return (
@@ -36,14 +40,16 @@ def run_solution(day, test: bool = False, part: int = None):
 
     with open(input_file) as f:
         data = f.read().strip()
-
+        
     print(f"Running Day {day}...")
     def run(partNo: int):
         start = time.time()
-        if partNo == 1: print("Part 1:", solution.part1(data))
-        elif partNo == 2: print("Part 2:", solution.part2(data))
+        if partNo == 1: 
+            print("Part 1:", f"{BRIGHT_GREEN}{solution.part1(data)}{RESET}", end=' ')
+        elif partNo == 2: 
+            print("Part 2:", f"{BRIGHT_GREEN}{solution.part2(data)}{RESET}", end=' ')
         elapsed = time.time() - start
-        print(f"Elapsed Time: {elapsed:.6f} seconds")
+        print(Fore.YELLOW + f"{elapsed:.6f} seconds" + Style.RESET_ALL)
         
     [run(partNo) for partNo in [1,2] if part is None or part == partNo]
 
