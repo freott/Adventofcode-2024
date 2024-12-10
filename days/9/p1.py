@@ -4,7 +4,6 @@ def read(data: str):
 
 def run(data: str) -> int:
   groups = read(data)
-  print(groups)
   result = []
   for i, group in enumerate(groups):
     file_count, space_count = group
