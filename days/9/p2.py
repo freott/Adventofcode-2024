@@ -8,7 +8,7 @@ def read(data: str):
             'space_count': int(group[1]) if len(group) > 1 else 0
           } for i, group in enumerate(groups)]
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   groups = read(data)
   for i, _ in reversed(list(enumerate(copy.deepcopy(groups)))):
     group = groups[i]

@@ -1,5 +1,5 @@
 import p1
 import p2
         
-part1 = lambda data: p1.run(data)
-part2 = lambda data: p2.run(data)
+part1 = lambda *args: p1.run(*args)
+part2 = lambda *args: p2.run(*args)

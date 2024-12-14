@@ -11,7 +11,7 @@ def read(data: str):
 
 dd = [[-1, 0], [0, 1], [1, 0], [0, -1]]
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   map, trailheads = read(data)
   
   trailhead_scores = []

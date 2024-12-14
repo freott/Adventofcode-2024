@@ -1,2 +1,2 @@
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   pass

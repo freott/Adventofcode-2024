@@ -38,7 +38,7 @@ def process_equation(args: Tuple[int, Equation]):
     running_part = running_part_input
     return eq.result if validate(eq.numbers.pop(0), eq.result, eq.numbers) else 0
 
-def run(data: str):
+def run(data: str, *args):
     equations = read(data)
 
     from multiprocessing import Pool

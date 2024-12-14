@@ -113,7 +113,7 @@ def process_step(args: Tuple[int, int, Info, Pos]):
     looped = step(new_info, pos.copy(), set(), set()) == -1
     return 1 if looped else 0
 
-def run(data: str):
+def run(data: str, *args):
   pos, info = read(data)
   
   steps = set()

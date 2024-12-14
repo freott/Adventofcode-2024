@@ -18,7 +18,7 @@ def count_stones(stone: int, cache: Dict[int, int], i):
   return count
   
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   stones = list(map(int, data.split(' ')))
   cache = {}
   count = 0

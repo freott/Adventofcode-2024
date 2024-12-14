@@ -1,6 +1,6 @@
 import math
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   stones = list(map(int, data.split(' ')))
   for _ in range(25):
     next_stones = []

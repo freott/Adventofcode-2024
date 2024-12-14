@@ -13,7 +13,7 @@ def read(data: str):
         freqMap.setdefault(char, []).append((x, y))
   return freqMap, maxX, maxY
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   freqMap, maxX, maxY = read(data)
   
   antinodes = set()

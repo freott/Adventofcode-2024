@@ -11,7 +11,7 @@ def read(data: str):
     machines.append((ax, ay, bx, by, px, py))
   return machines
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   machines = read(data)
   tokens = 0
   for ax, ay, bx, by, px, py in machines:

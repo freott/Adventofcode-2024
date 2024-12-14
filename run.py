@@ -45,9 +45,9 @@ def run_solution(day, test: bool = False, part: int = None):
     def run(partNo: int):
         start = time.time()
         if partNo == 1: 
-            print("Part 1:", f"{BRIGHT_GREEN}{solution.part1(data)}{RESET}", end=' ')
+            print("Part 1:", f"{BRIGHT_GREEN}{solution.part1(data, test)}{RESET}", end=' ')
         elif partNo == 2: 
-            print("Part 2:", f"{BRIGHT_GREEN}{solution.part2(data)}{RESET}", end=' ')
+            print("Part 2:", f"{BRIGHT_GREEN}{solution.part2(data, test)}{RESET}", end=' ')
         elapsed = time.time() - start
         print(Fore.YELLOW + f"{elapsed:.6f} seconds" + Style.RESET_ALL)
         

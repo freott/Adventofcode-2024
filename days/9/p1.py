@@ -2,7 +2,7 @@ def read(data: str):
   groups = [data[i:i+2] for i in range(0, len(data), 2)]
   return [list(map(int, group)) for group in groups]
 
-def run(data: str) -> int:
+def run(data: str, *args) -> int:
   groups = read(data)
   result = []
   for i, group in enumerate(groups):
