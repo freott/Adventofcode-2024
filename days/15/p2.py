@@ -27,7 +27,7 @@ def read(data: str):
 
 def is_box_part(value: str): return value == '[' or value == ']'
 
-def push(grid: List[List[str]], box_pos: List[int], dir: str, dry_run: bool, ignore_sibling: bool):
+def push(grid: List[List[str]], box_pos: List[int], dir: str, dry_run: bool):
   box_y, box_x = box_pos
   box = grid[box_y][box_x]
   target_y, target_x = [box_y + dd[dir][0], box_x + dd[dir][1]]
@@ -41,7 +41,7 @@ def push(grid: List[List[str]], box_pos: List[int], dir: str, dry_run: bool, ign
     target = grid[box_y][target_x]
     if target == '#': return False
     if target == '[' or target == ']':
-      if not push(grid, [box_y, target_x], dir, dry_run, False):
+      if not push(grid, [box_y, target_x], dir, dry_run):
         return False
     if not dry_run:
       grid[box_y][box2_x] = '[' if dir == '>' else ']'
@@ -60,9 +60,9 @@ def push(grid: List[List[str]], box_pos: List[int], dir: str, dry_run: bool, ign
         pushing_siblings = True
     
     if is_box_part(target):
-      if not push(grid, [target_y, box_x], dir, dry_run, pushing_siblings): return False
+      if not push(grid, [target_y, box_x], dir, dry_run): return False
     if not pushing_siblings and is_box_part(target2):
-      if not push(grid, [target_y, box2_x], dir, dry_run, pushing_siblings): return False
+      if not push(grid, [target_y, box2_x], dir, dry_run): return False
       
     if not dry_run:
       grid[box_y][box_x] = '.'
@@ -81,9 +81,9 @@ def run(data: str, *args) -> int:
     if dest == '#': continue
   
     if dest == '[' or dest == ']':
-      if not push(grid, [next_y, next_x], dir, True, False):
+      if not push(grid, [next_y, next_x], dir, True):
         continue
-      push(grid, [next_y, next_x], dir, False, False)
+      push(grid, [next_y, next_x], dir, False)
 
     grid[y][x] = '.'
     grid[next_y][next_x] = '@'
