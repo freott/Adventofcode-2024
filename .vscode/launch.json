@@ -7,8 +7,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/run.py", // Path to your `run.py`
             "args": [
-                "10",
-                "1",
+                "16",
+                "2",
                 "test"
             ],
             "console": "integratedTerminal"
