@@ -1,0 +1,53 @@
+<v<A >>^A vA ^A <vA <A A >>^A A vA <^A >A A vA ^A <vA >^A A <A >A <v<A >A >^A A A vA <^A >A 
+
+v<<A ^>>A vA ^A v<<A ^>>A A v<A <A ^>>A A <A v>A A ^A v<A ^>A A <A >A v<A <A ^>>A A A <A v>A ^A 
+
+<<vA >>^A vA ^A <<vA A >A >^A A vA <^A >A A vA ^A <vA >^A A <A >A <<vA >A >^A A A vA <^A >A 
+
+
+jag:  v<<A ^>>A vA  ^A
+r3:   <    A    >   A
+r2:        ^        A
+r1:                 3
+
+
+
+aoc:  <vA <A  A   >>^A  A   vA  <^A   >A  A   vA  ^A
+r3:   v   <   <   A     A   >   ^     A   A   >   A
+r2:               <     <             ^   ^       A
+r1:                                               7
+
+27
+jag:  v<<A  ^>>A  A   v<A   <A  ^>>A  A   <A   v>A  A   ^A
+r3:   <     A     A   v     <   A     A   ^    >    >   A
+r2:         ^     ^             <     <                 A
+r1:                                                     7
+
+jag2: <<vA  A   >A    >^A   A   vA  <^A  >A   A   vA  ^A   <vA   >^A   A   <A  >A   <<vA  >A   >^A   A   A   vA  <^A  >A
+r3:   <     <   v     A     A            
+r2:                   <     <
+
+
+456A
+jag : v<A  <A  A ^>>A A  <A  >vA ^A A  vA  ^A  v<A ^>A  <A  >A  v<A ^>A  <A  >A  v<A <A ^>>A A  <A  >vA ^A 
+jag2: v<A  <A  A >>^A A  vA  ^<A >A A  vA  ^A  v<A ^>A  <A  >A  v<A ^>A  <A  >A  v<A <A >>^A A  <A  v>A ^A  
+aoc: <v<A >>^A A  <vA <A >>^A A  vA  A <^A  >A  <vA >^A  <A  >A  <vA >^A  <A  >A  <v<A  >A  >^A A  vA  <^A >A 
+
+jag:  v<A  <A   A   ^>>A  A   <A   >vA ^A A   vA  ^A  v<A ^>A <A  >A  v<A ^>A  <A   >A  v<A <A  ^>>A A  <A  >vA ^A 
+r3:   v    <    <   A     A   ^    >   A  A   >   A   v   A   ^   A   v   A    ^    A   v   <   A    A  ^   >   A
+r2:                 <     <            ^  ^       A       >       A       >         A           v    v          A
+r3:                                               4               5                 6                           A
+
+jag2: v<A  <A  A  >>^A  A   vA  ^<A >A  A   vA  ^A  v<A ^>A  <A  >A   v<A ^>A  <A   >A  v<A <A >>^A A   <A  v>A ^A  
+r3:   v    <   <  A     A   >   ^   A   A   >   A   v   A    ^   A    v   A    ^    A   v   <  A    A   ^   >   A
+r2:               <     <           ^   ^       A       >        A        >         A          v    v           A
+r3:                                             4                5                  6                           A
+
+aoc:  <v<A >>^A A  <vA <A >>^A A  vA  A <^A  >A  <vA >^A  <A  >A  <vA >^A  <A  >A  <v<A  >A  >^A A  vA  <^A >A 
+r3:   
+
+    +---+---+
+    | ^ | A |
++---+---+---+
+| < | v | > |
++---+---+---+

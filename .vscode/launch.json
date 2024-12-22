@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/run.py", // Path to your `run.py`
             "args": [
-                "17",
+                "21",
                 "2",
                 "test"
             ],
