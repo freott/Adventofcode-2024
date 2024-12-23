@@ -8,7 +8,6 @@ def prune(number: int): return number % 16777216
 
 def run(data: str, *args) -> int:
   numbers = read(data)
-  print(numbers)
   
   result = []
   for n in numbers:

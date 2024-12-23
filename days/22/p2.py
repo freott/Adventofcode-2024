@@ -1,5 +1,4 @@
 import math
-from pprint import pprint
 
 def read(data: str):
   return list(map(int, data.splitlines()))

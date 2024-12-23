@@ -1,7 +1,3 @@
-from itertools import combinations, product
-import math
-from pprint import pprint
-
 def read(data: str):
   robots = []
   for row in data.splitlines():

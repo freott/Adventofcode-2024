@@ -1,6 +1,4 @@
-from itertools import combinations, permutations, product
-import math
-from pprint import pprint
+from itertools import permutations
 from typing import Dict, List, Tuple
 
 Map = List[Dict[str, Tuple[int, int]]]
@@ -94,6 +92,6 @@ def run(data: str, *args) -> int:
   results = 0
   for code in codes:
     chars = list(code)
-    min, operation = operate(chars, operators)
+    min, _ = operate(chars, operators)
     results += min * int(code[:3])
   return results

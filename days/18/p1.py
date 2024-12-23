@@ -1,4 +1,3 @@
-from pprint import pprint
 from typing import List
 
 def read(data: str):
@@ -9,17 +8,6 @@ def read(data: str):
     if x > maxX: maxX = x
     if y > maxY: maxY = y
   return bytes, maxX, maxY
-
-# def printGrid(grid):
-#   print("  ", end="")
-#   for col in range(len(grid[0])):
-#     print(col, end=" ")
-#   print()
-#   for i, row in enumerate(grid):
-#     print(i, end=" ")
-#     for cell in row:
-#       print(cell, end=" ")
-#     print()
 
 dd = [[-1, 0], [0, 1], [1, 0], [0, -1]]
 def get_next_positions(y: int, x: int, grid: List[List[int]], maxX: int, maxY: int):

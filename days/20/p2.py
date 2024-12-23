@@ -1,18 +1,6 @@
 from itertools import product
 from typing import Dict, List, Optional, Tuple
 
-
-def print_grid(grid, render_cell):
-  print("   ", end="")
-  for col in range(len(grid[0])):
-    print(col, end=" " if col > 9 else "  ")
-  print()
-  for i, row in enumerate(grid):
-    print(i, end=" " if i > 9 else "  ")
-    for cell in row:
-      print(render_cell(cell), end="  ")
-    print()
-
 def read(data: str):
   grid: List[List[str]] = []
   start = None

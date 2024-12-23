@@ -1,5 +1,4 @@
 from collections import deque
-from pprint import pprint
 from typing import List
 
 def read(data: str):

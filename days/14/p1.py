@@ -1,7 +1,6 @@
 from functools import reduce
 from itertools import combinations, product
 import math
-from pprint import pprint
 
 SECONDS = 100
 

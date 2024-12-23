@@ -1,5 +1,4 @@
-from itertools import combinations, product
-from pprint import pprint
+from itertools import product
 from typing import List, Set, Tuple
 
 def read(data: str):

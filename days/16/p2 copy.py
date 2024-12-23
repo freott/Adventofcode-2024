@@ -1,5 +1,3 @@
-from collections import deque
-from pprint import pprint
 from typing import List
 
 def read(data: str):
@@ -45,8 +43,6 @@ def run(data: str, *args) -> int:
     pos, dir, score, trail = stack.pop()
     if score > best_score:
       continue
-    # if score > visited_grid[pos[0]][pos[1]]:
-    #   continue
     if pos == end:
       for p, s in trail.items():
         visited_grid[p[0]][p[1]] = min(visited_grid[p[0]][p[1]], s)
@@ -57,11 +53,7 @@ def run(data: str, *args) -> int:
           best_score_trails = trail_keys
         else:
           best_score_trails = best_score_trails | trail_keys
-        
-      
       continue
-    # if score >= visited_grid[pos[0]][pos[1]]:
-    #   continue
     
     visited_grid[pos[0]][pos[1]] = score
     

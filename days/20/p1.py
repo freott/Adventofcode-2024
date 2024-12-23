@@ -1,19 +1,6 @@
 from itertools import groupby
-from pprint import pprint
 from typing import List, Optional
 from tqdm import tqdm
-
-
-def print_grid(grid, render_cell):
-  print("   ", end="")
-  for col in range(len(grid[0])):
-    print(col, end=" " if col > 9 else "  ")
-  print()
-  for i, row in enumerate(grid):
-    print(i, end=" " if i > 9 else "  ")
-    for cell in row:
-      print(render_cell(cell), end="  ")
-    print()
 
 def read(data: str):
   grid: List[List[str]] = []
@@ -75,19 +62,14 @@ def count_seconds(grid, start, end, max_steps):
 
 def run(data: str, *args) -> int:
   grid, start, end = read(data)
-  # print_grid(grid, lambda v: ' ' if v == '.' else v)
   cheats = get_cheats(grid)
   original_time = count_seconds(grid, start, end, float('inf'))
-  print(original_time)
   cheat_times = []
   for i, (cheat_y, cheat_x) in tqdm(enumerate(cheats)):
-    # print(f'Iteration {i} of {len(cheats)}')
     copied_grid = [row[:] for row in grid]
     copied_grid[cheat_y][cheat_x] = '.'
     time = count_seconds(copied_grid, start, end, original_time - 99)
     cheat_times.append([(cheat_y, cheat_x), original_time - time])
   cheat_times = sorted(cheat_times, key=lambda x: x[1])
-  grouped_times = groupby(cheat_times, key=lambda x: x[1])
-  # pprint(cheat_times)
-  pprint([[key, len(list(group))] for key, group in grouped_times])
+  
   return len([_ for _, saved_time in cheat_times if saved_time >= 100])

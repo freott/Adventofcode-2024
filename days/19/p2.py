@@ -1,6 +1,4 @@
-from pprint import pprint
 from typing import Dict, Set
-
 
 def read(data: str):
   patterns, designs = data.split('\n\n')
