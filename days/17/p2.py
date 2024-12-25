@@ -34,23 +34,25 @@ def run_program(a: int, b: int, c: int, program: List[int]):
     elif opcode == 4:
       b = b ^ c
     elif opcode == 5:
-      val = to_combo(operand) % 8
-      if program[len(output)] != val: return False
-      output.append(val)
+      output.append(to_combo(operand) % 8)
     elif opcode == 6:
       b = adv(operand)
     elif opcode == 7:
       c = adv(operand)
     pointer += 2
     
-  if program != output: return False
-  
-  return True
+  return output
 
 def run(data: str, *args) -> int:
-  a,b,c,program = read(data)
-  
-  a = 117440
-  run_program(a, b, c, program)
-  return a
+  _, _, _, program = read(data)
+  candidates = [0]
+  for l in range(len(program)):
+    next_candidates = []
+    for candidate in candidates:
+      for i in range(8):
+        a = (candidate << 3) + i
+        if run_program(a, 0, 0, program) == program[-l-1:]:
+          next_candidates.append(a)
+    candidates = next_candidates
+  return min(candidates)
   
